@@ -1,6 +1,6 @@
 let customerName: string = "John Doe";
-let creditScore: number = 760;
-let income: number = 5500.0;
+let creditScore: number = 700;
+let income: number = 55000.0;
 let isEmployed: boolean = true;
 let debtToIncomeRatio: number = 35.0;
 
