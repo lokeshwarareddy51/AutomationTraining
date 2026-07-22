@@ -11,7 +11,7 @@ console.log("Yes Order is placed");
 
 // 3. Person's phone number: "123-456-7890"
 
-let PhoneNumber:number=9066981102;
+let PhoneNumber:string="123-456-7890";
 console.log(`My phone is ${PhoneNumber}`);
 
 // 4. Amount of money in a customer's bank account: 1000.50
@@ -28,7 +28,7 @@ console.log(`My Email id is ${emailAddress}`);
 // 6. Coordinates of a location (latitude, longitude): 37.7749, -122.4194
 
 let latitude:number=37.7749;
-let longitude:number=122.4194;
+let longitude:number=-122.4194;
 
 console.log(`My Lat and Long values are ${latitude} and ${longitude}`);
 

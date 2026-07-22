@@ -12,7 +12,6 @@ if (creditScore > 750) {
 
     console.log("Loan is approved")
 
-
 }
 else if (creditScore >= 650 && creditScore <= 750) {
 
