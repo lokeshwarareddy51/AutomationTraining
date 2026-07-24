@@ -8,26 +8,23 @@ let remainingAmount = 0;
 
 for (let i = 0; i < transactions.length; i++) {
 
-    if (transactions[i] > 0) {
+    if (transactions[i]! > 0) {
 
         creditcount++;
-        creditamount += transactions[i];
-        if (transactions[i] > 10000) {
+        creditamount += transactions[i]!;
+        if (transactions[i]! > 10000) {
 
             console.log(`Suspicious credit Transaction with amount ${transactions[i]}`)
 
         }
 
-
-
-
     }
     else {
 
         debitcount++;
-        debitamount += transactions[i];
+        debitamount += transactions[i]!;
 
-        if (transactions[i] < -10000) {
+        if (transactions[i]! < -10000) {
 
             console.log(`Suspicious debit Transaction with amount ${transactions[i]}`)
 

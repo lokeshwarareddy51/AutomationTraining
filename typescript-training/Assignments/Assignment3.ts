@@ -7,9 +7,9 @@ let average=0;
 
 for(let i:number=0;i<marks.length;i++){
 
- addmarks.push(marks[i]+10);
- average+=marks[i]+10;
+ addmarks[i]=marks[i]!+10;
+ average+=marks[i]!+10;
  console.log(studentNames[i]+":"+addmarks[i]);
 }
 
-console.log(`Average is ${average/3}`);
+console.log(`Average is ${average/marks.length}`);
