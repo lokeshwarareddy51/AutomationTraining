@@ -10,6 +10,15 @@ let sentencwords="";
 let totalwords=sentence.split(" ");
 console.log(totalwords.length);
 console.log(totalwords);
+let reverseorder="";
+
+
+for(let i=totalwords.length-1; i>=0; i--){
+
+    reverseorder=reverseorder+totalwords[i]+" "
+
+}
+console.log(reverseorder);
 
 for(let i=0; i<=totalwords.length-1; i++){
 
@@ -17,7 +26,8 @@ for(let i=0; i<=totalwords.length-1; i++){
 
 }
 
-console.log(sentencwords);
+//console.log(sentencwords);
+
 
 
 

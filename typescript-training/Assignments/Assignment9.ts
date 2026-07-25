@@ -8,13 +8,11 @@ for (let i = 1; i <= rows; i++) {
     let cols="";
     for (let j = rows;  j>i ; j--) {
         
-     
         cols+=" ";
 
     }
 
     for (let k = 1;  k<=i ; k++) {
-        
      
         cols+="*";
 

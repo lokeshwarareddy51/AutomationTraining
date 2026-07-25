@@ -43,4 +43,17 @@ console.log(spillt[1]);
 
 
 
+//onvert string to number/other types 
+console.log("********** method to conver string to string/other types and vice versa *******")
+let balance:string =" my account balance 43000";
+ balance = balance.replace(/[^0-9]/g, "");//
+ let bla:number=parseFloat(balance); // converting string to number
+ console.log(typeof(balance));
+
+
+
+
+
+
+
 
