@@ -1,4 +1,4 @@
-// Class 1
+// parent Class 1
 class Employee {
 
      salary: number = 50000;
@@ -8,7 +8,7 @@ class Employee {
     }
 }
 
-// Class 2
+// child1 Class 2
 class Company extends Employee {
 
     displayEmployeeSalary(): void {
@@ -18,8 +18,8 @@ class Company extends Employee {
         console.log(emp.getSalary() + " Class 2");
     }
 }
-//class 3
-class Manager extends Company{
+//child2 class 3
+class Manager extends Employee{
 
      showSalary(): number |string {
 

@@ -9,7 +9,7 @@ class Employee {
     }
 
     public setter(name: string) {
-       return this.names = name;
+        this.names = name;
 
 
     }
