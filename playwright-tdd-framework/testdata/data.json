@@ -1,0 +1,34 @@
+{
+    "getValidRepo": {
+
+        "requestType" : "get",
+        "endpoint" : "/repos/lokeswarareddy0303/NewRepo2",
+        "payload":"Not Available",
+        "statusCode": 200,
+        "statusMessage" : "OK",
+        "name":"NewRepo2",
+        "server": "github.com",
+        "namedatatype":"string"
+
+
+    },
+
+    "CreateValidRepo":{
+
+        "requestType": "post",
+        "endpoint" : "/user/repos",
+        "payload":{
+            "name":"playwrightRepo2",
+            "description" : "This is playwright Repo",
+            "private" : true
+        },
+        "statusCode": 201,
+        "statusMessage" : "Created",
+         "name":"playwrightRepo2",
+        "server": "github.com",
+        "private":"boolean"
+
+
+    }
+
+}
