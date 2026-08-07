@@ -9,14 +9,34 @@ on:
     - cron: '0 3 * * *'
 
   workflow_dispatch:
+    inputs:
+      suite:
+        description: "Select Test Suite (Optional Suites api feature)"
+        required: false
+        type: choice
+        options:
+          - smoke
+          - sanity
+          - regression
+
+      pattern:
+        description: "Enter Test File/Folder Pattern (Optional)"
+        required: false
+        default: ""
+
+      tags:
+        description: "Enter Playwright Tags (Optional)"
+        required: false
+        default: ""
 
 jobs:
   api-tests:
-
     runs-on: ubuntu-latest
 
-    steps:
+    env:
+      GITHUBTOKENAPI: ${{ secrets.GITHUB_TOKEN_API }}
 
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -31,8 +51,24 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run API Tests
-        run: npx playwright test tests/api-tests.spec.ts
+      - name: Run Playwright Tests
+        run: |
+          if [ -n "${{ github.event.inputs.pattern }}" ]; then
+            echo "Running Pattern: ${{ github.event.inputs.pattern }}"
+            npx playwright test ${{ github.event.inputs.pattern }}
+
+          elif [ -n "${{ github.event.inputs.tags }}" ]; then
+            echo "Running Tags: ${{ github.event.inputs.tags }}"
+            npx playwright test --grep "${{ github.event.inputs.tags }}"
+
+          elif [ -n "${{ github.event.inputs.suite }}" ]; then
+            echo "Running Suite: ${{ github.event.inputs.suite }}"
+            npx playwright test --grep "@${{ github.event.inputs.suite }}"
+
+          else
+            echo "Running ALL Playwright Tests"
+            npx playwright test
+          fi
 
       - name: Upload HTML Report
         if: always()
